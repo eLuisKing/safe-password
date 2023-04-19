@@ -1,0 +1,26 @@
+{
+  "name": "safe-password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisking96/safe-password.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisking96/safe-password/issues"
+  },
+  "homepage": "https://github.com/luisking96/safe-password#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.22",
+    "tailwindcss": "^3.3.1"
+  }
+}
