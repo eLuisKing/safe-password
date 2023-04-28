@@ -1,4 +1,4 @@
-const btnAdd = document.getElementById('btn-add');
+const btnAdd = document.getElementById('btn-add-movil');
 const hiddenMovilAdd = document.getElementById('generador-movil');
 
 
