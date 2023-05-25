@@ -21,4 +21,4 @@ function genPass(){
     return newPass;
 }
 
-console.log(genPass());
+// console.log(genPass());

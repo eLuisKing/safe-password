@@ -5,6 +5,20 @@ const btnCancelModal = document.getElementById('cancelar-modal')
 const hiddenMovilAdd = document.getElementById('generador-movil');
 const hiddenWebAdd = document.getElementById('modal-generador');
 
+//Botones generadores
+const btnGenMovil = document.querySelector('#gen-pass-movil');
+const btnGenWeb = document.querySelector('#gen-pass-web');
+const btnDoneMovil = document.querySelector('#done-movil');
+const btnDoneWeb = document.querySelector('#done-modal');
+
+//Inputs
+const inputNameMovil = document.querySelector('#name-movil');
+const inputMailMovil = document.querySelector('#mail-movil');
+const inputPassMovil = document.querySelector('#pass-movil');
+const inputNameWeb = document.querySelector('#name-web');
+const inputMailWeb = document.querySelector('#mail-web');
+const inputPassWeb = document.querySelector('#pass-web');
+
 
 //Boton de open/close generador en movil
 btnAddMovil.addEventListener('click',function(){
@@ -53,6 +67,8 @@ btnAddMovil.addEventListener('click',function(){
     }
 });
 
+
+
 btnAddWeb.addEventListener('click',function(){
     if(btnAddWeb.innerText == 'Nueva'){
         btnAddWeb.classList.remove('bg-secund');
@@ -65,3 +81,71 @@ btnAddWeb.addEventListener('click',function(){
     }
 });
 
+//Creamos el arrelo y traemos la info actual
+let data = [];
+data = JSON.parse(localStorage.getItem('todo'));
+
+//Funciones generadores
+btnGenMovil.addEventListener('click',function(){
+    //Insertamos los datos al arreglo
+    if(inputPassMovil.value == ""){
+        inputPassMovil.value = genPass();
+        data.push({
+            nombre: inputNameMovil.value,
+            mail: inputMailMovil.value,
+            password: inputPassMovil.value
+        })
+
+        //Insertamos al localstorage
+        localStorage.setItem('todo',JSON.stringify(data));
+
+        btnGenMovil.classList.toggle('hidden');
+        btnDoneMovil.classList.toggle('hidden');
+        btnDoneMovil.addEventListener('click',doneGenMovil);
+
+    }
+})
+
+
+function doneGenMovil(){
+    btnDoneMovil.classList.toggle('hidden');
+    btnGenMovil.classList.remove('hidden');
+    inputNameMovil.value = "";
+    inputMailMovil.value = "";
+    inputPassMovil.value = "";
+}
+
+
+btnGenWeb.addEventListener('click',function(){
+    //Insertamos los datos al arreglo
+    if(inputPassWeb.value == ""){
+        inputPassWeb.value = genPass();
+        data.push({
+            nombre: inputNameWeb.value,
+            mail: inputMailWeb.value,
+            password: inputPassWeb.value
+        })
+
+        //Insertamos al localstWeb
+        localStorage.setItem('todo',JSON.stringify(data));
+
+        btnGenWeb.classList.toggle('hidden');
+        btnDoneWeb.classList.toggle('hidden');
+        btnCancelModal.classList.toggle('hidden');
+        btnDoneWeb.addEventListener('click',doneGenWeb);
+
+    }
+})
+
+function doneGenWeb(){
+    btnGenWeb.classList.toggle('hidden');
+    btnDoneWeb.classList.toggle('hidden');
+    btnCancelModal.classList.toggle('hidden');
+    inputNameWeb.value = "";
+    inputMailWeb.value = "";
+    inputPassWeb.value= "";
+}
+
+
+
+console.log(data);

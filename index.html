@@ -50,67 +50,44 @@
             <div class="w-full p-4 border-solid border-2 rounded-b-xl bg-white">
                 <form class="mb-2" action="">
                     <div class="flex flex-col gap-2">
-                        <input class="p-2 border-solid border-2 rounded-lg" type="text" placeholder="Nombre">
-                        <input class="p-2 border-solid border-2 rounded-lg" type="email" name="" id="" placeholder="Correo">
-                        <input class="p-2 border-solid border-2 rounded-lg disabled" disabled type="text" name="" id="">
+                        <input id="name-web" class="p-2 border-solid border-2 rounded-lg" type="text" placeholder="Nombre">
+                        <input id="mail-web" class="p-2 border-solid border-2 rounded-lg" type="email" name="" id="" placeholder="Correo">
+                        <input id="pass-web" class="p-2 border-solid border-2 rounded-lg disabled" disabled type="text" name="" id="">
                     </div>
                 </form>
-                <button class=" w-20 h-10 bg-secund text-white hover:bg-third rounded">
+                <button id="gen-pass-web" class="w-20 h-10 bg-secund text-white hover:bg-third rounded">
                     Generar
                 </button>
                 <button id="cancelar-modal" class=" w-20 h-10 bg-red-600 text-white hover:bg-third rounded">
                     Cancelar
                 </button>
+                <button id="done-modal" class=" w-20 h-10 bg-green-500 text-white hover:bg-third rounded hidden">
+                    Done
+                </button>
             </div>
         </div>
     </div>
 
-    <div id="generador-movil" class="pl-10 pr-10 hidden lg:hidden">
+    <!-- Generador movil -->
+    <div id="generador-movil" class="pl-10 pr-10 hidden lg:hidden mb-4">
         <form class="" action="">
             <p class="pb-4 text-lg font-semibold">Nueva contrasena</p>
             <div class="flex flex-col gap-2 pb-3">
-                <input class="p-2 border-solid border-2 rounded-lg" type="text" placeholder="Nombre">
-                <input class="p-2 border-solid border-2 rounded-lg" type="email" name="" id="" placeholder="Correo">
-                <input class="p-2 border-solid border-2 rounded-lg disabled" disabled type="text" name="" id="">
+                <input id="name-movil" class="p-2 border-solid border-2 rounded-lg" type="text" placeholder="Nombre">
+                <input id="mail-movil" class="p-2 border-solid border-2 rounded-lg" type="email" name="" id="" placeholder="Correo">
+                <input id="pass-movil" class="p-2 border-solid border-2 rounded-lg disabled" disabled type="text" name="" id="">
             </div>
         </form>
-        <button class=" w-20 h-10 bg-secund text-white hover:bg-third rounded">
+        <button id="gen-pass-movil" class="w-20 h-10 bg-secund text-white hover:bg-third rounded">
             Generar
+        </button>
+        <button id="done-movil" class="w-20 h-10 bg-green-500 text-white hover:bg-third rounded hidden">
+            Hecho
         </button>
     </div>
 
     <!-- Contenedor de tarjetas passwords -->
-    <div class="w-full m-4 h-auto grid grid-flow-row justify-center gap-3 lg:grid-cols-4 lg:p-10">
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
-        <div class="w-72 p-3 bg-secund rounded-xl">
-            <p class="text-white">Facebook | usuario@gmail.com</p>
-            <p class="text-white">Password123</p>
-        </div>
-
+    <div id="container-tarjetas" class="w-full h-auto mb-10 grid grid-flow-row justify-center gap-3 lg:grid-cols-4 lg:p-10">
         <div class="w-72 p-3 bg-secund rounded-xl">
             <p class="text-white">Facebook | usuario@gmail.com</p>
             <p class="text-white">Password123</p>
