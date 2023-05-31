@@ -19,6 +19,8 @@ const inputNameWeb = document.querySelector('#name-web');
 const inputMailWeb = document.querySelector('#mail-web');
 const inputPassWeb = document.querySelector('#pass-web');
 
+const container = document.querySelector('#container-tarjetas');
+
 
 //Boton de open/close generador en movil
 btnAddMovil.addEventListener('click',function(){
@@ -102,6 +104,7 @@ btnGenMovil.addEventListener('click',function(){
         btnGenMovil.classList.toggle('hidden');
         btnDoneMovil.classList.toggle('hidden');
         btnDoneMovil.addEventListener('click',doneGenMovil);
+        window.location.reload()
 
     }
 })
@@ -133,6 +136,7 @@ btnGenWeb.addEventListener('click',function(){
         btnDoneWeb.classList.toggle('hidden');
         btnCancelModal.classList.toggle('hidden');
         btnDoneWeb.addEventListener('click',doneGenWeb);
+        window.location.reload()
 
     }
 })
@@ -149,3 +153,24 @@ function doneGenWeb(){
 
 
 console.log(data);
+
+//funcion para agergar tarea
+function addTarjertas(){
+
+    let coleccion =  JSON.parse(localStorage.getItem('todo'));
+
+    coleccion.forEach(function(i){
+        const elemento = `
+            <div class="w-72 p-3 bg-secund rounded-xl">
+                <p class="text-white">${i.nombre} | ${i.mail}</p>
+                <p class="text-white">${i.password}</p>
+            </div>
+        `;
+
+        container.insertAdjacentHTML("beforeend", elemento);
+    });
+};
+
+addTarjertas();
+
+// window.location.reload()
